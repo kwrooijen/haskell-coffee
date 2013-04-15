@@ -9,7 +9,7 @@ license:             GPL-3
 license-file:        LICENSE
 author:              Kevin van Rooijen
 maintainer:          kevin.van.rooijen@gmail.com
-copyright:           Copyright (C) 2012 Kevin van Rooijen
+copyright:           Copyright (C) 2013 Kevin van Rooijen
 category:            Language
 build-type:          Simple
 cabal-version:       >=1.8

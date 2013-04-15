@@ -9,7 +9,7 @@ module Coffee.Bindings
 
 import Data.Maybe (fromMaybe)
 import System.Process (rawSystem, readProcess)
-import System.Exit (ExitCode)
+import System.Exit (ExitCode(..))
 
 -- | The Coffee data structure
 data Coffee = Coffee
@@ -22,6 +22,7 @@ coffeeCompile :: [FilePath]     -- ^ List of .coffee files to compile
               -> Maybe FilePath -- ^ Output directory, Nothing for default
               -> Coffee         -- ^ Coffee structure for more options
               -> IO ExitCode    -- ^ Exit code
+coffeeCompile [] _ _ = return $ ExitFailure 1
 coffeeCompile files output coffee =
     rawSystem (getCompiler coffee) args
   where args = outputPath output ++ ["-c"] ++ files
